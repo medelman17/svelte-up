@@ -1,0 +1,4 @@
+{
+  "app": "pnpx ts-node src/index.ts",
+  "context": {}
+}
