@@ -1,0 +1,19 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "/Users/metalman/Fun/noname"
+  },
+  "1 error pnpm": {
+    "errno": 101,
+    "code": "ELIFECYCLE",
+    "pkgid": "@",
+    "stage": "build",
+    "script": "rustup target add x86_64-unknown-linux-musl && cargo build --release --target x86_64-unknown-linux-musl && mkdir -p ./target/cdk/release && cp ./target/x86_64-unknown-linux-musl/release/bootstrap ./target/cdk/release/bootstrap",
+    "err": {
+      "name": "pnpm",
+      "message": "@ build: `rustup target add x86_64-unknown-linux-musl && cargo build --release --target x86_64-unknown-linux-musl && mkdir -p ./target/cdk/release && cp ./target/x86_64-unknown-linux-musl/release/bootstrap ./target/cdk/release/bootstrap`\nExit status 101",
+      "code": "ELIFECYCLE",
+      "stack": "pnpm: @ build: `rustup target add x86_64-unknown-linux-musl && cargo build --release --target x86_64-unknown-linux-musl && mkdir -p ./target/cdk/release && cp ./target/x86_64-unknown-linux-musl/release/bootstrap ./target/cdk/release/bootstrap`\nExit status 101\n    at EventEmitter.<anonymous> (/Users/metalman/.nvm/versions/node/v14.18.1/lib/node_modules/pnpm/dist/pnpm.cjs:105183:20)\n    at EventEmitter.emit (events.js:400:28)\n    at ChildProcess.<anonymous> (/Users/metalman/.nvm/versions/node/v14.18.1/lib/node_modules/pnpm/dist/pnpm.cjs:93172:18)\n    at ChildProcess.emit (events.js:400:28)\n    at maybeClose (internal/child_process.js:1058:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:293:5)"
+    }
+  }
+}

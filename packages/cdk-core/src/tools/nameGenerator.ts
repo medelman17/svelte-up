@@ -64,7 +64,7 @@ export function stackName<T extends SupStack = SupStack>(
     produce: (context: cdk.IResolveContext) => {
       const { scope } = context
       const stack = SupStack.of(scope)
-      const prefix = trimSpecialCharacters(stack.supName)
+      const prefix = trimSpecialCharacters(stack.svelteUpName)
       const bits = [prepareString(prefix, props)]
 
       if (props.account) bits.push(cdk.Aws.ACCOUNT_ID)

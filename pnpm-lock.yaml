@@ -38,6 +38,50 @@ importers:
       ts-node: 10.3.0_036181877a83ed913a2bbec8dcc74354
       typescript: 4.4.4
 
+  packages/aws-artifacts:
+    specifiers:
+      '@types/jest': ^27.0.2
+      '@types/node': ^16.11.0
+      '@types/resolve': ^1.20.1
+      '@types/shell-quote': ^1.7.1
+      '@types/tar': ^4.0.5
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      '@typescript-eslint/parser': ^5.0.0
+      esbuild: ^0.13.7
+      eslint: ^8.0.1
+      eslint-config-prettier: ^8.3.0
+      eslint-plugin-eslint-comments: ^3.2.0
+      eslint-plugin-jest: ^25.2.1
+      eslint-plugin-prettier: ^4.0.0
+      execa: ^5.1.1
+      glob: ^7.2.0
+      lint-staged: ^11.2.3
+      prettier: ^2.4.1
+      ts-jest: ^27.0.7
+      ts-node: ^10.3.0
+      typescript: ^4.4.4
+    devDependencies:
+      '@types/jest': 27.0.2
+      '@types/node': 16.11.1
+      '@types/resolve': 1.20.1
+      '@types/shell-quote': 1.7.1
+      '@types/tar': 4.0.5
+      '@typescript-eslint/eslint-plugin': 5.0.0_3b49a3094ddb22ccc5b4c2c2360792e0
+      '@typescript-eslint/parser': 5.0.0_eslint@8.0.1+typescript@4.4.4
+      esbuild: 0.13.7
+      eslint: 8.0.1
+      eslint-config-prettier: 8.3.0_eslint@8.0.1
+      eslint-plugin-eslint-comments: 3.2.0_eslint@8.0.1
+      eslint-plugin-jest: 25.2.1_d630e7a2a202de014b22915e40c9ceea
+      eslint-plugin-prettier: 4.0.0_15313026b01cdd263118061498e273ac
+      execa: 5.1.1
+      glob: 7.2.0
+      lint-staged: 11.2.3
+      prettier: 2.4.1
+      ts-jest: 27.0.7_955fd824a1b675c0ebb6b183dba9cf6b
+      ts-node: 10.3.0_4837b44df871fd426bb731ce8876dc42
+      typescript: 4.4.4
+
   packages/cdk-buckets:
     specifiers:
       '@svelte-up/cdk-core': workspace:*
@@ -103,6 +147,141 @@ importers:
       typescript: 4.4.4
 
   packages/cdk-core:
+    specifiers:
+      '@aws-cdk/cloudformation-include': ^1.128.0
+      '@types/jest': ^26.0.10
+      '@types/node': ^16.11.1
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      '@typescript-eslint/parser': ^5.0.0
+      aws-cdk-lib: 2.0.0-rc.21
+      constructs: ^10.0.0
+      esbuild: ^0.13.7
+      eslint: ^8.0.1
+      eslint-config-prettier: ^8.3.0
+      eslint-plugin-eslint-comments: ^3.2.0
+      eslint-plugin-jest: ^25.2.1
+      eslint-plugin-prettier: ^4.0.0
+      execa: ^5.1.1
+      glob: ^7.2.0
+      lint-staged: ^11.2.3
+      prettier: ^2.4.1
+      ts-jest: ^27.0.7
+      ts-node: ^10.3.0
+      typescript: ^4.4.4
+    dependencies:
+      '@aws-cdk/cloudformation-include': 1.128.0
+      aws-cdk-lib: 2.0.0-rc.21_constructs@10.0.9
+      constructs: 10.0.9
+    devDependencies:
+      '@types/jest': 26.0.24
+      '@types/node': 16.11.1
+      '@typescript-eslint/eslint-plugin': 5.0.0_3b49a3094ddb22ccc5b4c2c2360792e0
+      '@typescript-eslint/parser': 5.0.0_eslint@8.0.1+typescript@4.4.4
+      esbuild: 0.13.7
+      eslint: 8.0.1
+      eslint-config-prettier: 8.3.0_eslint@8.0.1
+      eslint-plugin-eslint-comments: 3.2.0_eslint@8.0.1
+      eslint-plugin-jest: 25.2.1_d630e7a2a202de014b22915e40c9ceea
+      eslint-plugin-prettier: 4.0.0_15313026b01cdd263118061498e273ac
+      execa: 5.1.1
+      glob: 7.2.0
+      lint-staged: 11.2.3
+      prettier: 2.4.1
+      ts-jest: 27.0.7_3a8db6934788715f16a9854a45849fac
+      ts-node: 10.3.0_4837b44df871fd426bb731ce8876dc42
+      typescript: 4.4.4
+
+  packages/cdk-deploy-project:
+    specifiers:
+      '@svelte-up/cdk-core': workspace:*
+      '@types/jest': ^26.0.10
+      '@types/node': ^16.11.1
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      '@typescript-eslint/parser': ^5.0.0
+      aws-cdk-lib: 2.0.0-rc.21
+      constructs: ^10.0.0
+      esbuild: ^0.13.7
+      eslint: ^8.0.1
+      eslint-config-prettier: ^8.3.0
+      eslint-plugin-eslint-comments: ^3.2.0
+      eslint-plugin-jest: ^25.2.1
+      eslint-plugin-prettier: ^4.0.0
+      execa: ^5.1.1
+      glob: ^7.2.0
+      lint-staged: ^11.2.3
+      prettier: ^2.4.1
+      ts-jest: ^27.0.7
+      ts-node: ^10.3.0
+      typescript: ^4.4.4
+    dependencies:
+      '@svelte-up/cdk-core': link:../cdk-core
+      aws-cdk-lib: 2.0.0-rc.21_constructs@10.0.9
+      constructs: 10.0.9
+    devDependencies:
+      '@types/jest': 26.0.24
+      '@types/node': 16.11.1
+      '@typescript-eslint/eslint-plugin': 5.0.0_3b49a3094ddb22ccc5b4c2c2360792e0
+      '@typescript-eslint/parser': 5.0.0_eslint@8.0.1+typescript@4.4.4
+      esbuild: 0.13.7
+      eslint: 8.0.1
+      eslint-config-prettier: 8.3.0_eslint@8.0.1
+      eslint-plugin-eslint-comments: 3.2.0_eslint@8.0.1
+      eslint-plugin-jest: 25.2.1_d630e7a2a202de014b22915e40c9ceea
+      eslint-plugin-prettier: 4.0.0_15313026b01cdd263118061498e273ac
+      execa: 5.1.1
+      glob: 7.2.0
+      lint-staged: 11.2.3
+      prettier: 2.4.1
+      ts-jest: 27.0.7_3a8db6934788715f16a9854a45849fac
+      ts-node: 10.3.0_4837b44df871fd426bb731ce8876dc42
+      typescript: 4.4.4
+
+  packages/cdk-installer:
+    specifiers:
+      '@svelte-up/cdk-core': workspace:*
+      '@types/jest': ^26.0.10
+      '@types/node': ^16.11.1
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      '@typescript-eslint/parser': ^5.0.0
+      aws-cdk-lib: 2.0.0-rc.21
+      constructs: ^10.0.0
+      esbuild: ^0.13.7
+      eslint: ^8.0.1
+      eslint-config-prettier: ^8.3.0
+      eslint-plugin-eslint-comments: ^3.2.0
+      eslint-plugin-jest: ^25.2.1
+      eslint-plugin-prettier: ^4.0.0
+      execa: ^5.1.1
+      glob: ^7.2.0
+      lint-staged: ^11.2.3
+      prettier: ^2.4.1
+      ts-jest: ^27.0.7
+      ts-node: ^10.3.0
+      typescript: ^4.4.4
+    dependencies:
+      '@svelte-up/cdk-core': link:../cdk-core
+      aws-cdk-lib: 2.0.0-rc.21_constructs@10.0.9
+      constructs: 10.0.9
+    devDependencies:
+      '@types/jest': 26.0.24
+      '@types/node': 16.11.1
+      '@typescript-eslint/eslint-plugin': 5.0.0_3b49a3094ddb22ccc5b4c2c2360792e0
+      '@typescript-eslint/parser': 5.0.0_eslint@8.0.1+typescript@4.4.4
+      esbuild: 0.13.7
+      eslint: 8.0.1
+      eslint-config-prettier: 8.3.0_eslint@8.0.1
+      eslint-plugin-eslint-comments: 3.2.0_eslint@8.0.1
+      eslint-plugin-jest: 25.2.1_d630e7a2a202de014b22915e40c9ceea
+      eslint-plugin-prettier: 4.0.0_15313026b01cdd263118061498e273ac
+      execa: 5.1.1
+      glob: 7.2.0
+      lint-staged: 11.2.3
+      prettier: 2.4.1
+      ts-jest: 27.0.7_3a8db6934788715f16a9854a45849fac
+      ts-node: 10.3.0_4837b44df871fd426bb731ce8876dc42
+      typescript: 4.4.4
+
+  packages/cdk-lambdas:
     specifiers:
       '@aws-cdk/cloudformation-include': ^1.128.0
       '@types/jest': ^26.0.10
@@ -349,6 +528,53 @@ importers:
       tempy: 2.0.0
       ts-jest: 27.0.7_fe15ac987db2e7d4ad38346689ae2fc5
       ts-node: 10.3.0_036181877a83ed913a2bbec8dcc74354
+      typescript: 4.4.4
+
+  packages/sandbox-control-plane:
+    specifiers:
+      '@svelte-up/cdk-core': workspace:*
+      '@svelte-up/cdk-lambdas': workspace:*
+      '@types/jest': ^26.0.10
+      '@types/node': ^16.11.1
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      '@typescript-eslint/parser': ^5.0.0
+      aws-cdk-lib: 2.0.0-rc.21
+      constructs: ^10.0.0
+      esbuild: ^0.13.7
+      eslint: ^8.0.1
+      eslint-config-prettier: ^8.3.0
+      eslint-plugin-eslint-comments: ^3.2.0
+      eslint-plugin-jest: ^25.2.1
+      eslint-plugin-prettier: ^4.0.0
+      execa: ^5.1.1
+      glob: ^7.2.0
+      lint-staged: ^11.2.3
+      prettier: ^2.4.1
+      ts-jest: ^27.0.7
+      ts-node: ^10.3.0
+      typescript: ^4.4.4
+    dependencies:
+      '@svelte-up/cdk-core': link:../cdk-core
+      '@svelte-up/cdk-lambdas': link:../cdk-lambdas
+      aws-cdk-lib: 2.0.0-rc.21_constructs@10.0.9
+      constructs: 10.0.9
+    devDependencies:
+      '@types/jest': 26.0.24
+      '@types/node': 16.11.1
+      '@typescript-eslint/eslint-plugin': 5.0.0_3b49a3094ddb22ccc5b4c2c2360792e0
+      '@typescript-eslint/parser': 5.0.0_eslint@8.0.1+typescript@4.4.4
+      esbuild: 0.13.7
+      eslint: 8.0.1
+      eslint-config-prettier: 8.3.0_eslint@8.0.1
+      eslint-plugin-eslint-comments: 3.2.0_eslint@8.0.1
+      eslint-plugin-jest: 25.2.1_d630e7a2a202de014b22915e40c9ceea
+      eslint-plugin-prettier: 4.0.0_15313026b01cdd263118061498e273ac
+      execa: 5.1.1
+      glob: 7.2.0
+      lint-staged: 11.2.3
+      prettier: 2.4.1
+      ts-jest: 27.0.7_3a8db6934788715f16a9854a45849fac
+      ts-node: 10.3.0_4837b44df871fd426bb731ce8876dc42
       typescript: 4.4.4
 
   packages/sdk:

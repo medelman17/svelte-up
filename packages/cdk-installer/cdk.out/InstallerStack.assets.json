@@ -1,0 +1,19 @@
+{
+  "version": "13.0.0",
+  "files": {
+    "bf8b147d61dda5b3c239abbcf804f992d6110dced32fd5dc77f86f9bfe221837": {
+      "source": {
+        "path": "InstallerStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "bf8b147d61dda5b3c239abbcf804f992d6110dced32fd5dc77f86f9bfe221837.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

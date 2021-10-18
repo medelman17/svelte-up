@@ -2,23 +2,25 @@ import * as cdk from 'aws-cdk-lib'
 import { IConstruct, Construct } from 'constructs'
 
 export interface SupConstructProps {
-  supName: string
-  supPrefix: string
+  readonly svelteUpName: string
+  readonly svelteUpPrefix: string
 }
 
 export class SupConstruct extends Construct {
-  readonly supName: string
-  readonly supPrefix: string
+  readonly svelteUpName: string
+  readonly svelteUpPrefix: string
 
   constructor(scope: Construct, id: string, props: SupConstructProps) {
     super(scope, id)
 
-    const { supName, supPrefix } = props
+    const { svelteUpName, svelteUpPrefix } = props
 
-    this.supName = supName
-    this.supPrefix = supPrefix
+    this.svelteUpName = svelteUpName
+    this.svelteUpPrefix = svelteUpPrefix
 
-    cdk.Aspects.of(this).add(new cdk.Tag('SupConstruct', this.supName))
+    cdk.Aspects.of(this).add(
+      new cdk.Tag('SvelteUpConstruct', this.svelteUpName),
+    )
   }
 
   static of(construct: IConstruct): SupConstruct {

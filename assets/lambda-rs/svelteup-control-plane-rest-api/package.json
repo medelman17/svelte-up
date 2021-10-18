@@ -1,0 +1,25 @@
+{
+  "name": "@svelte-up/asset-control-plane-rest-api",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "rustup target add x86_64-unknown-linux-musl && cargo build --release --target x86_64-unknown-linux-musl && mkdir -p ./target/cdk/release && cp ./target/x86_64-unknown-linux-musl/release/bootstrap ./target/cdk/release/bootstrap",
+    "build:debug": "cargo build --target x86_64-unknown-linux-musl && mkdir -p ./target/cdk/release && cp ./target/x86_64-unknown-linux-musl/debug/bootstrap ./target/cdk/release/bootstrap",
+    "build:archive": "(cd ./target/cdk/release/ && zip ./lambda.zip ./bootstrap) && mv ./target/cdk/release/lambda.zip ./lambda.zip",
+    "build:clean": "rm -r ./target/cdk/release || echo '[build:clean] No existing release found.'",
+    "deploy": "npm run build:clean && npm run build && npm run cdk:deploy",
+    "benchmark": "export BENCHMARK_SUFFIX=${BENCHMARK_SUFFIX-$RANDOM}; npm run benchmark:setup && ts-node -- ./benchmark/benchmark.ts && npm run benchmark:destroy",
+    "benchmark:setup": "[[ $DRY_RUN != 'true' ]] && CI=true npm run cdk:deploy || echo 'Dry run, skipping deploy.'",
+    "benchmark:destroy": "[[ $BENCHMARK_SUFFIX != '' && $DRY_RUN != 'true' ]] &&  cdk destroy --force '*' || echo 'Dry run, skipping teardown.'",
+    "cdk:synth": "cdk synth",
+    "cdk:diff": "cdk diff",
+    "cdk:deploy": "[[ $CI == 'true' ]] && export CDK_APPROVAL='never' || export CDK_APPROVAL='broadening'; cdk deploy --require-approval $CDK_APPROVAL '*'",
+    "cdk:bootstrap": "cdk bootstrap aws://$(aws sts get-caller-identity | jq -r .Account)/$AWS_REGION",
+    "cdklocal:start": "docker-compose up",
+    "cdklocal:clear-cache": "(rm ~/.cdk/cache/accounts.json || true) && (rm ~/.cdk/cache/accounts_partitions.json || true)",
+    "cdklocal:deploy": "npm run --silent cdklocal:clear-cache && CDK_LOCAL=true AWS_REGION=eu-west-1 cdklocal deploy --require-approval never '*'",
+    "cdklocal:bootstrap": "npm run --silent cdklocal:clear-cache && CDK_LOCAL=true AWS_REGION=eu-west-1 cdklocal bootstrap aws://000000000000/eu-west-1",
+    "ts-node": "ts-node"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

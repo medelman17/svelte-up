@@ -1,0 +1,114 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "InstallerStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "InstallerStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "InstallerStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "InstallerStack.template.json",
+        "tags": {
+          "SvelteUpStack": "Sup",
+          "SvelteUpStackName": "Sup"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/bf8b147d61dda5b3c239abbcf804f992d6110dced32fd5dc77f86f9bfe221837.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "InstallerStack.assets"
+        ]
+      },
+      "dependencies": [
+        "InstallerStack.assets"
+      ],
+      "metadata": {
+        "/InstallerStack": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "SvelteUpStack",
+                "Value": "Sup"
+              },
+              {
+                "Key": "SvelteUpStackName",
+                "Value": "Sup"
+              }
+            ]
+          }
+        ],
+        "/InstallerStack/SvelteUpName/StringParam/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SvelteUpNameStringParam392290EE"
+          }
+        ],
+        "/InstallerStack/SvelteUpPrefix/StringParam/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SvelteUpPrefixStringParamE4B0A99C"
+          }
+        ],
+        "/InstallerStack/InstallerProjectRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstallerProjectRole3966310A"
+          }
+        ],
+        "/InstallerStack/InstallerProjectRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstallerProjectRoleDefaultPolicyB8EC5C1F"
+          }
+        ],
+        "/InstallerStack/InstallerProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstallerProject879FF821"
+          }
+        ],
+        "/InstallerStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/InstallerStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/InstallerStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/InstallerStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "InstallerStack"
+    }
+  }
+}

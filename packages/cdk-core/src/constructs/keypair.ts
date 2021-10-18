@@ -17,7 +17,10 @@ export interface SupKeypairProps {
 }
 
 export class SupKeypair extends Construct implements cdk.ITaggable {
-  tags: cdk.TagManager = new cdk.TagManager(cdk.TagType.KEY_VALUE, 'SupKeypair')
+  tags: cdk.TagManager = new cdk.TagManager(
+    cdk.TagType.KEY_VALUE,
+    'SvelteUpKeypair',
+  )
 
   private resource: cdk.CustomResource
 
@@ -111,7 +114,7 @@ export class SupStackKeypair extends Construct {
     super(scope, id)
 
     const stack = SupStack.of(this)
-    const prefix = stack.supPrefix
+    const prefix = stack.svelteUpPrefix
     this.resource = new SupKeypair(this, 'Resource', {
       name: `${prefix}-${props.name}`,
       secretPrefix: `${prefix}/keypair/`,

@@ -1,0 +1,78 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "ControlPlane.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ControlPlane.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ControlPlane": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://557432423607/us-east-1",
+      "properties": {
+        "templateFile": "ControlPlane.template.json",
+        "tags": {
+          "SvelteUpStack": "ControlPlane",
+          "SvelteUpStackName": "ControlPlane"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::557432423607:role/cdk-hnb659fds-deploy-role-557432423607-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::557432423607:role/cdk-hnb659fds-cfn-exec-role-557432423607-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-557432423607-us-east-1/9bf3949d7f7a1a97f153e3517fb55e9f9107a3b1132e5119f2c2c2f114f8d302.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ControlPlane.assets"
+        ]
+      },
+      "dependencies": [
+        "ControlPlane.assets"
+      ],
+      "metadata": {
+        "/ControlPlane": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "SvelteUpStack",
+                "Value": "ControlPlane"
+              },
+              {
+                "Key": "SvelteUpStackName",
+                "Value": "ControlPlane"
+              }
+            ]
+          }
+        ],
+        "/ControlPlane/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ControlPlane/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ControlPlane/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ControlPlane"
+    }
+  }
+}

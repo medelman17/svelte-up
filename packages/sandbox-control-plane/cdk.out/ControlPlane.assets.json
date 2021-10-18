@@ -1,0 +1,20 @@
+{
+  "version": "13.0.0",
+  "files": {
+    "9bf3949d7f7a1a97f153e3517fb55e9f9107a3b1132e5119f2c2c2f114f8d302": {
+      "source": {
+        "path": "ControlPlane.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "557432423607-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-557432423607-us-east-1",
+          "objectKey": "9bf3949d7f7a1a97f153e3517fb55e9f9107a3b1132e5119f2c2c2f114f8d302.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::557432423607:role/cdk-hnb659fds-file-publishing-role-557432423607-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

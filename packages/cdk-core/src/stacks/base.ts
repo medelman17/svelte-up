@@ -3,26 +3,26 @@ import { IConstruct, Construct } from 'constructs'
 import { SupStackNameTagger, SupStackProtectedNameTagger } from '../tools'
 
 export interface SupStackProps extends cdk.StackProps {
-  supName: string
-  supPrefix: string
+  svelteUpName: string
+  svelteUpPrefix: string
 }
 
 export class SupStack extends cdk.Stack {
-  readonly supName: string
-  readonly supPrefix: string
+  readonly svelteUpName: string
+  readonly svelteUpPrefix: string
 
   constructor(scope: Construct, id: string, props: SupStackProps) {
     super(scope, id, props)
 
-    const { supName, supPrefix } = props
+    const { svelteUpName, svelteUpPrefix } = props
 
-    this.supName = supName
-    this.supPrefix = supPrefix
+    this.svelteUpName = svelteUpName
+    this.svelteUpPrefix = svelteUpPrefix
 
-    this.tags.setTag('SupStackName', this.supName)
-    cdk.Aspects.of(this).add(new cdk.Tag('SupStack', this.supName))
+    this.tags.setTag('SvelteUpStackName', this.svelteUpName)
+    cdk.Aspects.of(this).add(new cdk.Tag('SvelteUpStack', this.svelteUpName))
     cdk.Aspects.of(this).add(new SupStackNameTagger())
-    cdk.Aspects.of(this).add(new SupStackProtectedNameTagger(this.supName))
+    cdk.Aspects.of(this).add(new SupStackProtectedNameTagger(this.svelteUpName))
   }
 
   static of(construct: IConstruct): SupStack {
